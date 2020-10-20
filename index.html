@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script src="wavesurfer.js-master/dist/wavesurfer.js"></script>
+
+<script src="wavesurfer.js-master/dist/plugin/wavesurfer.regions.js"></script>
+
+<center>
+<section id="waveform_box" style="width: 1500px; background-color: rgba(80, 80, 80, 0.1)">
+<div id="waveform"></div>
+</section>
+</center>
+
+<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Current region: <span id="current-region" style="font-size: 200%">0</span></div>
+<center>
+    <button class="btn btn-primary" onclick="wavesurfer.playPause()" id="pause">
+        <i class="glyphicon glyphicon-play"></i>
+        Play/Pause
+    </button>
+    <button onclick="toggle()" id="pause-on-change"> 
+        Pause on end: ON
+    </button> 
+</center>
+
+<div>Total time: <span id="time-total">0</span> seconds</div>
+<div>Current time: <span id="time-current">0</span> seconds</div>
+<div>Current playback rate: <span id="rate">1</span></div>
+
+<script type="text/javascript" src="data_phoneme.json"></script>
+<script type="text/javascript" src="scripts.js"></script> 
+
+
+</body>
+</html>
