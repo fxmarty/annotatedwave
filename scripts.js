@@ -45,7 +45,6 @@ var wavesurfer = WaveSurfer.create({
   minPxPerSec: 200,
   pixelRatio: 1,
   autocenter: true,
-  backend: 'MediaElement',
   plugins: [
         WaveSurfer.regions.create({})
     ],
