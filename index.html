@@ -12,28 +12,33 @@
 </section>
 </center>
 
-<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Current region: <span id="current-region" style="font-size: 200%">0</span></div>
+<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Current region (grouped, true vocals): <span id="current-region" style="font-size: 200%">0</span></div>
+<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Current region (instru moved): <span id="current-region-instru" style="font-size: 200%">0</span></div>
+
+<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Current region (ungrouped, true vocals): <span id="current-region-ungrouped-truevocals" style="font-size: 200%">0</span></div>
+
+<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Current region (ungrouped, polyphonic): <span id="current-region-ungrouped-polyphonic" style="font-size: 200%">0</span></div>
+
 <center>
     <button class="btn btn-primary" onclick="wavesurfer.playPause()" id="pause">
         <i class="glyphicon glyphicon-play"></i>
         Play/Pause
     </button>
     <button onclick="toggle()" id="pause-on-change"> 
-        Pause on end: ON
+        Pause on eeeend: ON
     </button> 
 </center>
 
 <div>Total time: <span id="time-total">0</span> seconds</div>
 <div>Current time: <span id="time-current">0</span> seconds</div>
 <div>Current playback rate: <span id="rate">1</span></div>
-<p></p> 
-<p>Shortcuts:</p>
-<p>- Backward/Forward: left/right key</p>
-<p>- Pause: space key</p>
-<p>- Increase/Decrease rate: up/down key</p>
 
+<script type="text/javascript" src="data_phonemeInstru.json"></script>
 <script type="text/javascript" src="data_phoneme.json"></script>
-<script type="text/javascript" src="scripts.js"></script> 
+<script type="text/javascript" src="phoneme_polyphonic.json"></script>
+<script type="text/javascript" src="phoneme_truevocals.json"></script>
+<script type="text/javascript" src="scripts.js" charset="utf-8"></script> 
+
 
 </body>
 </html>

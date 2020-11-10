@@ -33,8 +33,13 @@ RegionsPlugin.prototype.getRegionAtTime = function (tps){
 
 
 var phoneme = JSON.parse(data_phoneme);
+var phoneme_instru = JSON.parse(data_phonemeInstru);
+var phoneme_ungrouped_truevocals = JSON.parse(phoneme_truevocals)
+var phoneme_ungrouped_polyphonic = JSON.parse(phoneme_polyphonic)
+
 var phonemeLength = phoneme.length;
 var phonemeGroups = ['approximant','fricative','nasal','plosive','vowel','special']
+var phoneme_list = ['ɚ', 's', 'ɛ', 'ð', 'j', 'œ', 'k', 'ɔ', 'ɲ', 'ø', 't', 'ʑ', 'd', 'ᵻ', 'ʃ', 'ʋ', 'ɜ', 'p', 'θ', 'ɾ', 'ɡ', 'n', 'ʏ', 'ɨ', 'ç', 'ɒ', 'ə', 'x', 'ʝ', 'ɟ', 'ŋ', 'ʎ', 'i', 'ɵ', 'y', 'ʁ', 'l', 'ʒ', 'ɕ', 'f', 'a', 'ɑ', 'β', 'ɬ', 'ʌ', 'z', 'o', 'r', 'v', 'ɐ', 'ɹ', 'ɣ', 'ɪ', 'w', 'ʔ', 'e', 'ʊ', 'u', 'b', 'h', 'æ', 'm', 'special 1', 'special 2'];
 var pauseOnEnd = true;
 
 var wavesurfer = WaveSurfer.create({
@@ -45,6 +50,7 @@ var wavesurfer = WaveSurfer.create({
   minPxPerSec: 200,
   pixelRatio: 1,
   autocenter: true,
+  //backend: 'MediaElement',
   plugins: [
         WaveSurfer.regions.create({})
     ],
@@ -114,6 +120,10 @@ wavesurfer.on('audioprocess', function() {
         try {
             var currentLabel = wavesurfer.regions.getCurrentRegion().attributes.label;
             document.getElementById('current-region').innerText = currentLabel;
+            document.getElementById('current-region-instru').innerText = phonemeGroups[indexOfMax(phoneme_instru[Math.floor( wavesurfer.getCurrentTime()/0.016 )])];
+            
+            document.getElementById('current-region-ungrouped-truevocals').innerText = phoneme_list[indexOfMax(phoneme_ungrouped_truevocals[Math.floor( wavesurfer.getCurrentTime()/0.016 )])];
+            document.getElementById('current-region-ungrouped-polyphonic').innerText = phoneme_list[indexOfMax(phoneme_ungrouped_polyphonic[Math.floor( wavesurfer.getCurrentTime()/0.016 )])];
             
             if (pauseOnEnd) {
                 if (labelCourant != wavesurfer.regions.getRegionAtTime(currentTime + 0.016).attributes.label) {
